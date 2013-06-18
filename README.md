@@ -1,5 +1,5 @@
-Fluid Powered TYPO3: Documentation Collection
-=============================================
+Fluid Powered TYPO3: Documentation
+==================================
 
 > Welcome to the documentation collection for the extensions in the Fluid Powered TYPO3 family.
 
