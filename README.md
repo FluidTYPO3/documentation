@@ -14,3 +14,4 @@ The documentation collection is divided into the following primary chapters:
 * [Extensions](Extensions.md)
   Is a more detailed set of documentation about each extension's features, requirements, practices etc.
 * [Cookbook](Cookbook/)
+  Is a collection of code examples.
