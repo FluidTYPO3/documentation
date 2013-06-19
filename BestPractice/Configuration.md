@@ -1,19 +1,23 @@
 ## Fluid Powered TYPO3: Best Practice
 
-### Configuration
+Before you read this chapter there are a few basic facts you must know. The extensions in this family (at least the feature
+providers: fluidcontent, fluidpages, fluidbackend) all use TypoScript Fluid view configurations to read a path to the templates
+which should be scanned.
 
-In order to have your templates recognised by fluidpages/fluidcontent/flux you will have to add a bit of mandatory configuration.
+Templates are then scanned on a file basis (by simply filtering through files of a certain format - html, xml etc) and parsed in
+order to read the actual per-template configuration options (such as the human readable label or icon for this template).
 
-There are a few ways to have your templates recognised - which one you use will depend on your particular use case. In order of
-preference these are:
+There are multiple ways to set your template paths but only one preferred which builds solely on Extbase/Fluid conventions. All
+methods are described in this chapter, along with their implications so you can match them to your use case and use the right one.
 
-#### Extension Key Registration
+### Extension Key Registration
 
 > This is the preferred way to integrate with fluidcontent/fluidpages/fluidbackend and so on - it ensures a proper relation to an
 > extension and uses all known conventions from Extbase regarding where to expect template file locations, public assets etc.
 > The conventions for this particular type of integration are listed in a dedicated chapter in this file.
 
-In your ext_tables.php file add the following registration code:
+This approach assumes you have an extension. It can be one which already contains site-oriented files for your specific site or
+you can just create one (See the chapter on "Building Code"). In your ext_tables.php file add the following registration code:
 
 ```php
 // $_EXTKEY = 'myext';
