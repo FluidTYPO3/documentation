@@ -10,6 +10,48 @@ order to read the actual per-template configuration options (such as the human r
 There are multiple ways to set your template paths but only one preferred which builds solely on Extbase/Fluid conventions. All
 methods are described in this chapter, along with their implications so you can match them to your use case and use the right one.
 
+### TypoScript configuration convention
+
+> Note: This convention applies only when you use an extension to store your templates and configuration, which is highly
+> recommended - and the officially preferred way.
+
+In order to use basic TypoScript configuration (such as the mandatory View paths) you should use the TYPO3/Extbase convention:
+
+```php
+// in ext_tables.php
+t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Description of configuration');
+```
+
+Which then expects a `setup.txt` and optional but also recommended `constants.txt` to be placed in the
+`EXT:myext/Configuration/TypoScript` folder. You are encouraged to use constants - you are always encouraged to do this when
+working with configuration-type TypoScript (as opposed to for example when you create COA objects). Since almost all TypoScript
+involved with any extension in this family is exactly configuration-type TypoScript, you should simply make a habit of using it
+always, for all of page-, content- and backend module templates.
+
+Your settings should use the conventional scopes:
+
+```txt
+# for frontend-related extensions
+plugin.tx_myext.view {
+	templateRootPath = ...
+	...
+}
+plugin.tx_myext.settings {
+	foo = bar
+}
+
+# for backend (EXT:fluidbackend currently) oriented extensions
+module.tx_myext.view {
+	...
+}
+module.tx_myext.settings {
+	foo = bar
+}
+```
+
+When you use these conventions the resulting code structures become universally understandable - even if you don't publish your
+work, you should still use the conventions if nothing else for your own benefit when later revisiting code.
+
 ### Extension Key Registration
 
 > This is the preferred way to integrate with fluidcontent/fluidpages/fluidbackend and so on - it ensures a proper relation to an
