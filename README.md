@@ -10,7 +10,12 @@ The documentation collection is divided into the following primary chapters:
 * [Beginner's Guide](BeginnersGuide.md)
   Is a book-form guide which can be read from end to end. It teaches you the basic concepts shared by the extensions.
 * [Best Practices](BestPractice/)
-  Is a set of best practices for all areas involved in creating web sites based on Fluid TYPO3 extensions.
+  Is a set of best practices for all areas involved in creating web sites based on Fluid TYPO3 extensions. It contains:
+  * [Best practices for Configuration](BestPractice/Configuration.md)
+  * [Best practices for Code Building](BestPractice/CodeBuilding.md)
+  * [Best practices for Content Template Creation](BestPractice/Content.md)
+  * [Best practices for Page Template Creation](BestPractice/Pages.md)
+  * [Best practices for Plugin Integration](BestPractice/Plugins.md)
 * [Extensions](Extensions.md)
   Is a more detailed set of documentation about each extension's features, requirements, practices etc.
 * [Cookbook](Cookbook/)
