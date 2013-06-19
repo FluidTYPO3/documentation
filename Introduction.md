@@ -63,8 +63,8 @@ also template locations:
 This approach is much different from what you are used to from TemplaVoila but is easily understood (or learned by example; good
 places to learn this way are the generic provider extensions you get from Fluid Powered TYPO3). Once you get used to this other
 approach which focuses on files instead of database configurations you will find your work flow more consistent; editing in your
-editor instead of through the TYPO3 backend and of using version control software on your template files and assets (don't despair
-- you can always learn this last bit once you are comfortable with the new way of doing things).
+editor instead of through the TYPO3 backend and of using version control software on your template files and assets (don't
+despair - you can always learn this last bit once you are comfortable with the new way of doing things).
 
 It is quite a change if you are used to editing files through TYPO3's backend. But it's also a jump that's very much worth making.
 
