@@ -68,6 +68,8 @@ Tx_Flux_Core::registerConfigurationProviderExtensionKey($_EXTKEY, 'Page'); // to
 Tx_Flux_Core::registerConfigurationProviderExtensionKey($_EXTKEY, 'Backend'); // to register backend module templates
 ```
 
+#### Implications
+
 The second parameter indicates the Controller name. This has the following implications:
 
 * The expected Controller class name, if one exists, is Tx_Myext_Controller_ContentController. If this class exists it is used
@@ -88,3 +90,49 @@ which is a bit of a break if you were previously used to storing them in fileadm
 the additional consistency you gain. The configuration paths follow every convention known from Extbase and Fluid, which means
 you also get the ability to add language files without using long paths to each file. There's of course more benefits from doing
 it this way - more than can be mentioned here - _please consider using this approach even if you are just making basic templates._
+
+### Simple Template Path Registration
+
+> This method is discouraged as it detaches your template files from an extension scope. You are encouraged to store your files
+> and configuration in an extension - this makes it easier to transport and allows you to use even more conventions to make the
+> actual code you need, smaller, and the usability (for integrators) of your work a lot higher.
+
+To use a dumb path for your templates for example in `fileadmin` simply add the following TypoScript (to your existing TypoScript
+configuration records):
+
+```txt
+# for fluidpages template paths
+plugin.tx_fluidpages.collections.mycollectionname.templateRootPath = fileadmin/templates/page/
+# for fluidcontent template paths
+plugin.tx_fluidcontent.collections.mycollectionname.templateRootPath = fileadmin/templates/content/
+```
+
+> Note: EXT:fluidbackend __does not support TypoScript paths this way; it requires the use of an extension - see above__.
+
+#### Implications
+
+When you register template paths this way, without an extension being associated with them, you lose the following possibilities:
+
+* You cannot use `<f:translate>` and other ViewHelpers which use an extension context to determine which files to use; when using
+  such ViewHelpers you are required to use a full LLL:... path in the `key` attribute.
+* You cannot use TypoScript settings unless your templates make use of `<v:var.typoscript>` to read them, which adds overhead.
+* You cannot override LLL labels through TypoScript which you would be able to do if the LLL was in an extension.
+* Templates will render in the scope of the extension which renders the template - e.g. fluidcontent, fluidpages, fluidbackend.
+
+This may or may not present problems for your strategy - but even if you consider it acceptable to lose these capabilities, please
+do consider using an extension instead. It is, in every way, better in the long run and presents less hoops to jump through.
+
+### Legacy
+
+The fluidpages and fluidcontent extensions still, for legacy reasons, support these configuration paths:
+
+```txt
+plugin.tx_fed.fce.mycollectionname.templateRootPath = ...
+plugin.tx_fed.page.mycollectionname.templateRootPath = ...
+```
+
+These are considered deprecated. No schedule for removal exists at the time of writing this.
+
+Whenever you see these, please change them to either use the "Simple Template Path Registration" paths (e.g.
+`plugin.tx_fluidpages.collections.mycollectionname.templateRootPath` etc) or if at all possible, transfer them to an extension and
+use the recommended extension key based registration.
