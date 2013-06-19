@@ -1,4 +1,4 @@
-## Fluid Powered TYPO3: Best Practice
+## Fluid Powered TYPO3: Best Practice for Configuration
 
 Before you read this chapter there are a few basic facts you must know. The extensions in this family (at least the feature
 providers: fluidcontent, fluidpages, fluidbackend) all use TypoScript Fluid view configurations to read a path to the templates
