@@ -69,7 +69,7 @@ For example, such a build command might look like:
 	--pages 1 --content 1 --controllers 1 --git 1 --travis 1 --use-vhs 1
 ```
 
-Which would generate the extension key "test" authored by "Claus Due" with email "claus@wildside.dk" and include page and content
+Which would generate the extension key `test` authored by `Claus Due` with email `claus@wildside.dk` and include page and content
 templates as well as controller classes for each, a Travis-CI build script to go along with the extension and finally will create
 a git repository in the extension folder and initially commit all files.
 
