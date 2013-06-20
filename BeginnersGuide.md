@@ -25,6 +25,9 @@ The first three extensions you need to know are *Flux*, *Fluid Pages* and *Fluid
 *fluidpages* and *fluidcontent*. You can read a little bit about each extension on this page - and there is much more
 documentation about each, in other sections of this documentation repository.
 
+In this document, all the concepts used in Fluid Powered TYPO3 extensions are explained one by one. Each concept is covered in a
+section by itself, starting from the core concept and building outwards to each individual feature.
+
 ## Flux: Fluid FlexForms
 
 > Fluid template based FlexForms using ViewHelpers for compact and dynamic configurations.
@@ -71,6 +74,46 @@ as well as the actual rendering of the content element, page template, plugin vi
 
 In order to do this (and a few other operations) Flux uses a special concept: the ConfigurationProvider pattern.
 
-### What is a ConfigurationProvider?
+## What is a ConfigurationProvider?
 
+A ConfigurationProvider is a special type of class which serves a specific purpose - much like an Extbase Controller class which
+renders Reponses to Requests, a ConfigurationProvider returns values needed to identify a template file and configure the
+rendering process. A ConfigurationProvider serves as the link between a record of a particular type and a Fluid template. Which
+simply means that in order for Flux to know which template file it should render, it asks for a ConfigurationProvider to return
+the template path and filename, variables which must be assigned to the template when rendering, paths to Layouts and Partials
+the template should use and much more.
 
+The ConfigurationProvider also serves as a *record processor* which means it is capable of manipulating records before they are
+saved, whenever TYPO3 performs operations on these records. This includes when a record's values are updated, when a record is
+deleted, moved, hidden and so forth.
+
+In other - and much shorter words - the ConfigurationProvider has two purposes: one is to return a proper template and template
+related configuration for Flux to use; the other is to configure records (if this is necessary). And every method which reads
+these variables and processes records accepts the current record (as array) which allows the ConfigurationProvider to, just for
+example, return a dynamic value for $templatePathAndFilename based on the current record being edited/rendered - which is exactly
+how fluidcontent and fluidpages both work: by using a special field in the record, in which a value is stored that can be used
+to resolve a template filename, a set of template paths and more.
+
+### The practical example: Flux's standard ConfigurationProvider
+
+The most basic ConfigurationProvider in Flux is attached to the `tt_content` table and triggers whenever content records are saved,
+moved etc. The purpose of this ConfigurationProvider is to *adjust the position of content elements when they are saved in nested
+content element containers also enabled by Flux* - it reacts to new records being created or records being drag-n-dropped into
+content areas, then adjusts values in the record which define where the content element is located relative to the parent and area
+name of that parent.
+
+Then, added on top of this ConfigurationProvider, is fluidcontent's ConfigurationProvider which also triggers on the `tt_content`
+table's records being manipulated but instead of "just" handling relations to other content elements, this ConfigurationProvider
+also is capable of returning different template paths and template filenames based on the `tx_fed_fcefile` field of `tt_content`
+(this field is named so for legacy reasons; it contains a specially formatted reference to the selected Fluid content type and the
+collection to which it belongs).
+
+These are just examples of how a ConfigurationProvider can be used in practice to control every little detail about how each Flux
+template should be handled - and even which template should be used - based on the current record being rendered or manipulated.
+
+The concept is also used in fluidpages where, instead of triggering on `tt_content` records, it triggers on `pages` records and
+returns a template file, paths, variables etc. based on which page template is selected in the page properties (with inheritance
+from parent pages supported as a native feature of fluidpages' ConfigurationProvider).
+
+You can construct your own ConfigurationProvider classes for those cases when you need a greater degree of control over the Flux
+form associated with, for example, your custom Extbase plugin.
