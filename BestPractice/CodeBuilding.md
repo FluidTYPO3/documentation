@@ -79,7 +79,9 @@ You can then very easily install the generated extension also from the command l
 ./typo3/cli_dispatch.phpsh extbase builder:install test
 ```
 
-Which simply installs the extension key "test" (note: this feature only works on 6.0+ TYPO3 sites).
+Which simply installs the extension key "test" (note: this feature only works on 6.0+ TYPO3 sites). All you then need to do is
+load the static TypoScript into each root template where you want the content/page templates to be available - and start adding
+your own templates or adjusting the pre-built placeholder templates.
 
 ### Generating unit and functional tests
 
