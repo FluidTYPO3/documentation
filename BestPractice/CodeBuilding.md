@@ -62,6 +62,25 @@ all containing a basic set of configuration enabling the file to be used by each
 which means no files/folders are written but the intent to create each file/folder is output instead. You can even initialise
 and initially commit all files as a git repository (requires the `git` CLI command to be available to the current shell user).
 
+For example, such a build command might look like:
+
+```shell
+./typo3/cli_dispatch.phpsh extbase builder:providerextension test "Claus Due <claus@wildside.dk>" \
+	--pages 1 --content 1 --controllers 1 --git 1 --travis 1 --use-vhs 1
+```
+
+Which would generate the extension key "test" authored by "Claus Due" with email "claus@wildside.dk" and include page and content
+templates as well as controller classes for each, a Travis-CI build script to go along with the extension and finally will create
+a git repository in the extension folder and initially commit all files.
+
+You can then very easily install the generated extension also from the command line:
+
+```shell
+./typo3/cli_dispatch.phpsh extbase builder:install test
+```
+
+Which simply installs the extension key "test" (note: this feature only works on 6.0+ TYPO3 sites).
+
 ### Generating unit and functional tests
 
 When you are "done" (if such a thing is possible) with your templates and classes related to your templates - Controllers,
