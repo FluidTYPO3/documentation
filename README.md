@@ -51,7 +51,7 @@ when you submit this a so-called pull request is made and your change will be ev
 
 When writing your cover message please observe this single rule:
 
-> The subject field (on Github, it has a placeholder saying `Update <filename>` - please fill in this field with a text like
+> The subject field (on Github, it has a placeholder saying `Update <filename>`) - please fill in this field with a text like
 > `[DOC] Recipe for doing foobar in a baz template`. In other words: always write a subject and always begin it with `[DOC]` and
 > begin the following sentence with a Capital letter. The `[DOC]` prefix is mandatory in this repository but note that other
 > repositories also use other prefixes not described here. Make your subjects descriptive - the worst possible subject is one
