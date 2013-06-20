@@ -17,7 +17,7 @@ configuration by using just a single command (from your TYPO3 document root):
 
 The command supports a wide range of arguments to affect which features the extension should use and how it should be built.
 
-```txt
+```plain
 REQUIRED ARGUMENTS:
   --extension-key      The extension key which should be generated. Must not
                        exist in the typo3conf/ext folder.
