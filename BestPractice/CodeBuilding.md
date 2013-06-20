@@ -84,7 +84,8 @@ required by your extension. EXT:builder is then used to perform a range of tests
 tests your extension may contain (which includes tests built by using EXT:builder itself).
 
 Whenever you receive pull requests or push to your master branch, Travis will execute the build script and report any problems to
-you, the repository owner. [An example of a Travis build script; for EXT:builder itself](https://travis-ci.org/FluidTYPO3/builder).
+you, the repository owner. [An example of a Travis build; for EXT:builder itself](https://travis-ci.org/FluidTYPO3/builder) and
+[the script which configures that build](https://github.com/FluidTYPO3/builder/blob/master/.travis.yml).
 
 Since even the most basic automated Travis-CI script written by EXT:builder will perform many tests on syntax in both PHP and
 Fluid you are highly encouraged to use Travis-CI. But you can of course also perform the tests as needed, simply by running the
