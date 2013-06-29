@@ -13,6 +13,7 @@ The documentation collection is divided into the following primary chapters:
   Is a set of best practices for all areas involved in creating web sites based on Fluid TYPO3 extensions. It contains:
   * [Best practices for Configuration](BestPractice/Configuration.md)
   * [Best practices for Code Building](BestPractice/CodeBuilding.md)
+  * [Best practices for Migrating Resources and Setups](BestPractice/Migration.md)
   * [Best practices for Content Template Creation](BestPractice/Content.md)
   * [Best practices for Page Template Creation](BestPractice/Pages.md)
   * [Best practices for Plugin Integration](BestPractice/Plugins.md)
