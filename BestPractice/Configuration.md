@@ -63,9 +63,9 @@ you can just create one (See the chapter on "Building Code"). In your ext_tables
 
 ```php
 // $_EXTKEY = 'myext';
-Tx_Flux_Core::registerConfigurationProviderExtensionKey($_EXTKEY, 'Content'); // to register content templates
-Tx_Flux_Core::registerConfigurationProviderExtensionKey($_EXTKEY, 'Page'); // to register page templates
-Tx_Flux_Core::registerConfigurationProviderExtensionKey($_EXTKEY, 'Backend'); // to register backend module templates
+Tx_Flux_Core::registerProviderExtensionKey('$_EXTKEY, 'Content'); // to register content templates
+Tx_Flux_Core::registerProviderExtensionKey('$_EXTKEY, 'Page'); // to register page templates
+Tx_Flux_Core::registerProviderExtensionKey('$_EXTKEY, 'Backend'); // to register backend module templates
 ```
 
 #### Implications
