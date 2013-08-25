@@ -17,6 +17,9 @@ The documentation collection is divided into the following primary chapters:
   * [Best practices for Content Template Creation](BestPractice/Content.md)
   * [Best practices for Page Template Creation](BestPractice/Pages.md)
   * [Best practices for Plugin Integration](BestPractice/Plugins.md)
+* [Guides](Guides/)
+  Is a set of guides for using the Flux API. It contains:
+  * [Guide for using the FormComponent](Guides/FormComponent.md)
 * [Extensions](Extensions.md)
   Is a more detailed set of documentation about each extension's features, requirements, practices etc.
 * [Cookbook](Cookbook/)
