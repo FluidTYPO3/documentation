@@ -93,6 +93,10 @@ In other words: when you use a Flux ViewHelper, for example a form field, it is 
 into a Form Component object instance which is then attached to the parent (inserted as the parent node in the Fluid template),
 and so on, until the full tree structure is built.
 
+Note: The only exception to the rule "Flux never renders any form fields" is here, in the "Custom" field type which lets you
+define the actual HTML which will be inserted as field - it's not as such Flux which renders the field, but it is the exception
+to the rule that everything is rendered by the TYPO3 core rather than Flux.
+
 ### Form Components' relation to the HTML form it defines
 
 The actual display of Form Component fields added in Flux is handled entirely by the TYPO3 core (with one single exception, which
@@ -107,9 +111,10 @@ rather than as pure PHP arrays.
 
 ### The Flux API flavors
 
-Flux provides three main flavors of the Form Component API: ViewHelpers for Fluid templates, PHP objects or TypoScript. Each
-of these flavors has advantages and drawbacks - selecting the one you require is a vital task; once the decision is made it is not
-easy to change to another flavor (e.g. switching from ViewHelpers to TypoScript - migration implies completely rewriting the form).
+Flux provides four main flavors of the Form Component API: ViewHelpers for Fluid templates, PHP objects, TypoScript or Domain
+Model class annotations. Each of these flavors has advantages and drawbacks - selecting the one you require is a vital task; once
+the decision is made it is not easy to change to another flavor (e.g. switching from ViewHelpers to TypoScript - migration implies
+completely rewriting the form). Some are limited to defining Forms to use as FlexForm replacements, others encompass table TCA.
 
 #### The ViewHelper API (original flavor)
 
