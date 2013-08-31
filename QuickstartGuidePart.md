@@ -1,8 +1,8 @@
 ## Fluid Powered TYPO3 Quickstart Guide
 
-Fed up with TemplaVoilà (which is end of life anyway)? Here's a squeezed guide to get you started with creating page templates and content elements using the (link: http://github.com/FluidTYPO3 text: FluidTYPO3 class: external) family of extensions.
+Fed up with TemplaVoilà (which is end of life anyway)? Here's a squeezed guide to get you started with creating page templates and content elements using the [FluidTYPO3](http://github.com/FluidTYPO3) family of extensions.
 
-You can code along this post or grab a copy of (link: http://twitter.com/cedricziel text: @cedricziel's class: external) (link: http://github.com/FluidTYPO3/ft3_empty text: ft3_empty extension class: external) to copy the basic structure and required files.
+You can code along this post or grab a copy of [@cedricziel's](http://twitter.com/cedricziel) [ft3_empty](http://github.com/FluidTYPO3/ft3_empty) to copy the basic structure and required files.
 
 ## Step 1: Install the required extensions
 
@@ -53,7 +53,7 @@ Tx_Flux_Core::registerProviderExtensionKey($_EXTKEY, 'Page');
 Tx_Flux_Core::registerProviderExtensionKey($_EXTKEY, 'Content');
 ```
 
-You can copy ``ext_emconf.php`` from some other extension (like (link: http://github.com/FluidTYPO3/ft3_empty text: ft3_empty class: external)) and change it accordingly or use the exension builder to create a fresh one. Here's an example how it should look like:
+You can copy ``ext_emconf.php`` from some other extension (like [ft3_empty](http://github.com/FluidTYPO3/ft3_empty)) and change it accordingly or use the exension builder to create a fresh one. Here's an example how it should look like:
 
 ```php
 $EM_CONF[$_EXTKEY] = array(
@@ -187,7 +187,7 @@ Template file ``typo3conf/ext/quickstart/Resources/Private/Templates/Page/Foo.ht
 
 We implement a page template named _Foo_. To 'connect' template and layout they are equally named ``Foo.html`` and both declare ``<f:layout name="Foo"/>``.
 
-> The div containers' only purpose is to (link: http://buzz.typo3.org/teams/extbase/article/howto-autocompletion-for-fluid-in-phpstorm/ text: enable code completion in your favorite IDE) and will not be output.
+> The div containers' only purpose is to [enable code completion in your favorite IDE](http://buzz.typo3.org/teams/extbase/article/howto-autocompletion-for-fluid-in-phpstorm) and will not be output.
 
 The layout contains some simple HTML structure with two content areas and the outer div container's CSS class is controlled by a Fluid variable ``{settings.pageClass}``. The variable is prefixed ``settings.`` which is not required by configuration but very useful. This will become clear at a later stage.
 
@@ -229,7 +229,7 @@ and a grid that will be used as the backend layout:
 
 The sections _Content_ and _Sidebar_ make use of a ``vhs`` viewhelper to render the content of those columns.
 
-> All available viewhelpers and their arguments can be looked up in the reference on (link: http://fedext.net/viewhelpers.html text: fedext.net class: external)
+> All available viewhelpers and their arguments can be looked up in the reference on [fedext.net](http://fedext.net/viewhelpers.html)
 
 You should now be able to select the page layout in the backend by editing a page's properties after clearing all caches. ``fluidpages`` includes some fine inheritance feature that enables you to select the page template not only for the current page but also for its children and the chain of inheritance can be interrupted at any level.
 
@@ -353,7 +353,7 @@ Now, let's create a content element for a typical use case: a teaserbox consisti
 
 ``Configuration`` contains the flexform that defines the content element's fields which are wrapped in an outer ``<flux:flexform/>`` viewhelper. ``id`` is a required argument for this viewhelper and used to generate the translation key for the element's label (flux.teaser in this case) in TYPO3's _New Content Element Wizard_. By default a new tab labelled _FCE_ is created which can be overridden with the viewhelper argument ``wizardTab``.
 
-There's nothing special about the flexform's fields in this example so to avoid duplicate content please take a look at the reference guide on (link: http://fedext.net/viewhelpers/flux.html text: fedext.net class: external) where you can find all required information about their functionality and arguments. One thing to take a closer look at though is the link wizard that is implemented by making it a child of the according input field.
+There's nothing special about the flexform's fields in this example so to avoid duplicate content please take a look at the reference guide on [fedext.net](http://fedext.net/viewhelpers/flux.html) where you can find all required information about their functionality and arguments. One thing to take a closer look at though is the link wizard that is implemented by making it a child of the according input field.
 
 > The fields' values are accessible as equally named variables in sections ``Preview`` and ``Main``.
 
