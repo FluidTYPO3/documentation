@@ -32,7 +32,7 @@ ______ Partials
 ______ Templates
 ________ Content
 ________ Page
-______ Public
+____ Public
 __ ext_emconf.php
 __ ext_icon.gif
 __ ext_tables.php
