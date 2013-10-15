@@ -141,16 +141,14 @@ Layout file ``typo3conf/ext/quickstart/Resources/Private/Layouts/Foo.html``
 ```html
 <f:layout name="Foo"/>
 
-<f:section name="Main">
-    <div id="page" class="{settings.pageClass}">
-        <div id="sidebar">
-            <f:render section="Sidebar"/>
-        </div>
-        <div id="content">
-            <f:render section="Content"/>
-        </div>
+<div id="page" class="{settings.pageClass}">
+    <div id="sidebar">
+        <f:render section="Sidebar"/>
     </div>
-</f:section>
+    <div id="content">
+        <f:render section="Content"/>
+    </div>
+</div>
 ```
 
 Template file ``typo3conf/ext/quickstart/Resources/Private/Templates/Page/Foo.html``
