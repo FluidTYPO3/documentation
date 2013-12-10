@@ -52,3 +52,87 @@ Change every occurence of
 * ``flux:flexform.field.tree`` to ``flux:field.tree``
 * ``flux:flexform.field.userFunc`` to ``flux:field.userFunc``
 * ``flux:flexform.content`` to ``flux:form.content``
+
+This can be done automatically using the following script:
+
+**Use at your own risk, change $directory**
+
+```php
+<?php
+
+$directory = '/Users/danilo/Sites/hmspl/typo3conf/ext/';
+
+$replaceNamespaces = array(
+	'{namespace flux=Tx_Flux_ViewHelpers}' => '{namespace flux=FluidTYPO3\Flux\ViewHelpers}',
+);
+
+$replaceViewHelpers = array(
+	'flux:flexform' => 'flux:form',
+	'flux:flexform.grid' => 'flux:grid',
+	'flux:flexform.grid.column' => 'flux:grid.column',
+	'flux:flexform.grid.row' => 'flux:grid.row',
+	'flux:flexform.container' => 'flux:form.container',
+	'flux:flexform.data' => 'flux:form.data',
+	'flux:flexform.object' => 'flux:form.object',
+	'flux:flexform.section' => 'flux:form.section',
+	'flux:flexform.sheet' => 'flux:form.sheet',
+	'flux:flexform.field.wizard.add' => 'flux:wizard.add',
+	'flux:flexform.field.wizard.colorPicker' => 'flux:wizard.colorPicker',
+	'flux:flexform.field.wizard.edit' => 'flux:wizard.edit',
+	'flux:flexform.field.wizard.link' => 'flux:wizard.link',
+	'flux:flexform.field.wizard.list' => 'flux:wizard.list',
+	'flux:flexform.field.wizard.select' => 'flux:wizard.select',
+	'flux:flexform.field.wizard.slider' => 'flux:wizard.slider',
+	'flux:flexform.field.wizard.suggest' => 'flux:wizard.suggest',
+	'flux:flexform.field.checkbox' => 'flux:field.checkbox',
+	'flux:flexform.field.controllerActions' => 'flux:field.controllerActions',
+	'flux:flexform.field.custom' => 'flux:field.custom',
+	'flux:flexform.field.file' => 'flux:field.file',
+	'flux:flexform.field.inline' => 'flux:field.inline',
+	'flux:flexform.field.inline.fal' => 'flux:field.inline.fal',
+	'flux:flexform.field.input' => 'flux:field.input',
+	'flux:flexform.field.relation' => 'flux:field.relation',
+	'flux:flexform.field.select' => 'flux:field.select',
+	'flux:flexform.field.text' => 'flux:field.text',
+	'flux:flexform.field.tree' => 'flux:field.tree',
+	'flux:flexform.field.userFunc' => 'flux:field.userFunc',
+	'flux:flexform.content' => 'flux:form.content',
+);
+
+die('MAKE A DAMN BACKUP, YOU COWBOY!' . PHP_EOL);
+
+$dir = new RecursiveDirectoryIterator($directory);
+$ite = new RecursiveIteratorIterator($dir);
+foreach($ite as $file) {
+	if ('html' !== $file->getExtension()) {
+		continue;
+	}
+
+	$content = file_get_contents($file->getPathname());
+
+	$hasNamespace = FALSE;
+	foreach ($replaceNamespaces as $oldNamespace => $newNamespace) {
+		if (FALSE === strpos($content, $oldNamespace)) {
+			continue;
+		}
+
+		$hasNamespace = TRUE;
+		$content = str_replace($oldNamespace, $newNamespace, $content);
+	}
+
+	if (FALSE === $hasNamespace) {
+		continue;
+	}
+
+	foreach ($replaceViewHelpers as $oldViewHelper => $newViewHelper) {
+		$newViewHelper = str_replace('$', '\\$', $newViewHelper);
+		$content = preg_replace('/<(\/?)' . preg_quote($oldViewHelper) . '([\s\/>])/', '<$1' . $newViewHelper . '$2', $content);
+	}
+
+	file_put_contents($file->getPathname(), $contents);
+
+	print_r('Modified ' . $file->getFilename() . PHP_EOL);
+}
+
+?>
+```
