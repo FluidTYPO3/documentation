@@ -39,5 +39,16 @@ Change every occurence of
 * ``flux:flexform.field.wizard.select`` to ``flux:wizard.select``
 * ``flux:flexform.field.wizard.slider`` to ``flux:wizard.slider``
 * ``flux:flexform.field.wizard.suggest`` to ``flux:wizard.suggest``
+* ``flux:flexform.field.checkbox`` to ``flux:field.checkbox``
+* ``flux:flexform.field.controllerActions`` to ``flux:field.controllerActions``
+* ``flux:flexform.field.custom`` to ``flux:field.custom``
+* ``flux:flexform.field.file`` to ``flux:field.file``
+* ``flux:flexform.field.inline`` to ``flux:field.inline``
+* ``flux:flexform.field.inline.fal`` to ``flux:field.inline.fal``
+* ``flux:flexform.field.input`` to ``flux:field.input``
+* ``flux:flexform.field.relation`` to ``flux:field.relation``
+* ``flux:flexform.field.select`` to ``flux:field.select``
+* ``flux:flexform.field.text`` to ``flux:field.text``
+* ``flux:flexform.field.tree`` to ``flux:field.tree``
+* ``flux:flexform.field.userFunc`` to ``flux:field.userFunc``
 * ``flux:flexform.content`` to ``flux:form.content``
-
