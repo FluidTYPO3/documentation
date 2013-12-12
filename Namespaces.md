@@ -129,7 +129,7 @@ foreach($ite as $file) {
 		$content = preg_replace('/<(\/?)' . preg_quote($oldViewHelper) . '([\s\/>])/', '<$1' . $newViewHelper . '$2', $content);
 	}
 
-	file_put_contents($file->getPathname(), $contents);
+	file_put_contents($file->getPathname(), $content);
 
 	print_r('Modified ' . $file->getFilename() . PHP_EOL);
 }
