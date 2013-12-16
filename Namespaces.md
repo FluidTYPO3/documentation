@@ -7,19 +7,15 @@ If you are upgrading flux to the current git master on typo3 6.0 or 6.1 you will
 
 http://forge.typo3.org/issues/54115
 
-You have 2 ways to fix this:
+##You have 2 ways to fix this:
+The preferred and recommended way to fix this problem is to replace code in your templatefiles. We provide a script for that. 
 
-### Core Hack:
-
-Change 1 line of code:
-
-https://review.typo3.org/#/c/25814/9/typo3/sysext/fluid/Classes/Core/Parser/TemplateParser.php
-
-You are pretty safe to do that, as the change will be backported to 6.0 and 6.1 on the next release.
+The second way to fix it, is a core hack in the source of TYPO3. We provide you a link at the 
+bottom of this page. (see headline Core Hack). 
 
 ### Change Templates (Preferred):
 
-Change every occurence of 
+Change every occurence of (see script - no need to do that by hand)
 
 * ``{namespace flux=Tx_Flux_ViewHelpers}`` to ``{namespace flux=FluidTYPO3\Flux\ViewHelpers}``
 * ``flux:flexform`` to ``flux:form``
@@ -136,3 +132,12 @@ foreach($ite as $file) {
 
 ?>
 ```
+
+
+### Core Hack:
+
+Change 1 line of code:
+
+https://review.typo3.org/#/c/25814/9/typo3/sysext/fluid/Classes/Core/Parser/TemplateParser.php
+
+You are pretty safe to do that, as the change will be backported to 6.0 and 6.1 on the next release.
