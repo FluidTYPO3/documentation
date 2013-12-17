@@ -24,6 +24,8 @@ The documentation collection is divided into the following primary chapters:
   Is a more detailed set of documentation about each extension's features, requirements, practices etc.
 * [Cookbook](Cookbook/)
   Is a collection of code examples.
+* [Contributing](Contributing/)
+  Is for those of you who wish to contribute code. It describes our workflow and quality expectations.
 
 ## Contributing to the documentation collection
 
