@@ -20,6 +20,7 @@ The documentation collection is divided into the following primary chapters:
 * [Guides](Guides/)
   Is a set of guides for using the Flux API. It contains:
   * [Guide for using the FormComponent](Guides/FormComponent.md)
+  * [Guide for using language files and translations](Guides/WorkingWithLocallang.md)
 * [Extensions](Extensions.md)
   Is a more detailed set of documentation about each extension's features, requirements, practices etc.
 * [Cookbook](Cookbook/)
