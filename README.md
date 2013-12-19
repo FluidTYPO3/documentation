@@ -23,6 +23,8 @@ The documentation collection is divided into the following primary chapters:
   * [Guide for using language files and translations](Guides/WorkingWithLocallang.md)
 * [Extensions](Extensions.md)
   Is a more detailed set of documentation about each extension's features, requirements, practices etc.
+* [Concepts](Concepts/)
+  Contains in-depth information about unique concepts Fluid Powered TYPO3 introduces.
 * [Cookbook](Cookbook/)
   Is a collection of code examples.
 * [Contributing](Contributing/)
