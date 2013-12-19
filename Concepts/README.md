@@ -27,7 +27,7 @@ and come back to this section if and when you need more detailed information abo
   Deals with the special class pattern called `Providers` - classes which provide data and manipulation for one very specific type
   of record - fx triggering on and then processing a `tt_content` record which has `CType` set to `myspecialtype` when saved; and
   much, much more - this concept is, together with the `Flux Forms` concept, the very core that allows Flux to do what it does.
-* [Outlets and Pipes](OutletsAndPipes.md)
+* [Outlets and Pipes](OutletsAndPipes.md) **Since Flux 7.0.0**.
   Is dedicated to a special concept which can be used as standalone or in connection with a `Flux Controller` or `Provider`. In
   all its simplicity it two special types of classes which when put together, routes and processes data through a series of input
   and output `Pipes` to validate, convert, manipulate, store, send, log, publish (and more!) data from any source to any output.
