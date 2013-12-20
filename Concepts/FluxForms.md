@@ -7,6 +7,12 @@ This document describes in detail what the `Flux Form` concept means and how it 
 be used if you are starting out - if you are new to Flux, start with our [introduction](../Introduction.md), which introduces the
 concepts in a much softer, more readily grasped format.
 
+### API levels 1 and 2
+
+This concept is available for use in Fluid templates, in TypoScript and in PHP. The Fluid and TypoScript aspects can be classified
+as **layer 1** while the PHP based API should be classified as **layer 2** since processing it involves using one or more concepts
+from **layer 2**.
+
 ## What is the Form Component?
 
 The Form Component in Flux is a set of classes which can be attached to each other in various ways, resulting in a combined
