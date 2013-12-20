@@ -11,8 +11,9 @@ A compiled list of services which you can use - resources for documentation, dow
 3. [Support chat](https://fedext.net/support-chat.html) is an IRC plugin which lets you speak to us - when we are around.
 4. [IRC channel #fedext](http://freenode.net/irc_servers.shtml) which you can access with any IRC client. It's the same channel
    you enter when you use the Support Chat.
-5. [Continuous integration using Travis](https://travis-ci.org/FluidTYPO3) displays the current build status for all of our
-   extensions. Here, you can investigate the logs in all glorious detail.
+5. [Continuous integration using Travis](https://travis-ci.org/FluidTYPO3/flux) displays the current build status for all of our
+   extensions. Here, you can investigate the logs in all glorious detail. Simply replace the last url segment with the extension
+   key you wish to inspect.
 6. [ViewHelper Schema XSD files](https://fedext.net/viewhelpers.html) can be downloaded and used in your editor, for example
    [as explained for PHPstorm on buzz.typor.org](http://buzz.typo3.org/teams/extbase/article/howto-autocompletion-for-fluid-in-phpstorm/),
    to get autocompletion for all ViewHelpers in Fluid itself, and all Fluid Powered TYPO3 extensions.
