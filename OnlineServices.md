@@ -15,7 +15,7 @@ A compiled list of services which you can use - resources for documentation, dow
    extensions. Here, you can investigate the logs in all glorious detail. Simply replace the last url segment with the extension
    key you wish to inspect.
 6. [ViewHelper Schema XSD files](https://fedext.net/viewhelpers.html) can be downloaded and used in your editor, for example
-   [as explained for PHPstorm on buzz.typor.org](http://buzz.typo3.org/teams/extbase/article/howto-autocompletion-for-fluid-in-phpstorm/),
+   [as explained for PHPstorm on buzz.typo3.org](http://buzz.typo3.org/teams/extbase/article/howto-autocompletion-for-fluid-in-phpstorm/),
    to get autocompletion for all ViewHelpers in Fluid itself, and all Fluid Powered TYPO3 extensions.
 
 ### Services
