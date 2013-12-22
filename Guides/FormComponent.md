@@ -17,15 +17,3 @@ read this document first, then continue to recipes which interest you and learn 
 > how and where you can use it to implement TYPO3 forms (TCA, FlexForms) for your own extensions in easier ways.
 
 TODO: add guide-type guide
-
-### The Final Word
-
-As described in the introduction of this guide you have not encountered any specific information about the actual implementation
-of Flux Form Components - this information is found in two main places: the online version of the API reference and the cookbook
-recipes. Since the Flux Form Component is used by many other features in the Fluid Powered TYPO3 family you can naturally also
-learn a lot by studying the documentation for the specific implementations. Doing this will teach you a lot about how to _use_ the
-Form Component API (mainly the ViewHelper flavor, but all implementations use the same naming conventions) which is knowledge you
-benefit greatly from when working on constructing the forms. Recipes in the cookbook can help you understand how to _integrate_
-your Forms - and last but not least, the full API reference can be used to study all the little details.
-
-
