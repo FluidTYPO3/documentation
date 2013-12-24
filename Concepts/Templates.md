@@ -24,9 +24,6 @@ A template file which can be used by Flux is exactly the same as a normal fluid 
 1. The namespace `{namespace flux=FluidTYPO3\Flux\ViewHelpers}` must be present.
 2. There must be a `Configuration` section created using `f:section`.
 
-The `Configuration` section name can be changed in your custom [Provider class](Providers.md). You can also use multiple sections
-and let your Provider switch between them based on, for example, a value from the record or from TypoScript, user session etc.
-
 Inside the `Configuration` section (or whichever name you chose, in case you chose not to follow conventions) you should place
 a `flux:form` tag containing at least an `id` attribute which should have a `lowerCamelCase` value, for example `specialImage`.
 
@@ -39,6 +36,11 @@ The final convention - which you *should* follow for transparency but which *can
 section which contains the actual output rendering for the frontend, `Main` - this section gets rendered from the Layout you use,
 which means you can of course choose a different name if that makes sense. Using the name `Main` simply means other people will
 immediately know the purpose of that section.
+
+> #### Customisation option
+>
+> The `Configuration` section name can be changed in your custom [Provider class](Providers.md). You can also use multiple sections
+> and let your Provider switch between them based on, for example, a value from the record or from TypoScript, user session etc.
 
 An extremely minimal template example (example: `fluidcontent` element template):
 
