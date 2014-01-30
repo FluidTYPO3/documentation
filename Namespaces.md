@@ -48,6 +48,7 @@ Change every occurence of (see script - no need to do that by hand)
 * ``flux:flexform.field.tree`` to ``flux:field.tree``
 * ``flux:flexform.field.userFunc`` to ``flux:field.userFunc``
 * ``flux:flexform.content`` to ``flux:form.content``
+* ``flux:flexform.renderContent`` to ``flux:content.render``
 
 This can be done automatically using the following script:
 
@@ -93,6 +94,7 @@ $replaceViewHelpers = array(
 	'flux:flexform.field.tree' => 'flux:field.tree',
 	'flux:flexform.field.userFunc' => 'flux:field.userFunc',
 	'flux:flexform.content' => 'flux:form.content',
+	'flux:flexform.renderContent' => 'flux:content.render',
 );
 
 die('MAKE A DAMN BACKUP, YOU COWBOY!' . PHP_EOL);
