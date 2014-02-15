@@ -9,10 +9,26 @@ This reads the template's configuration options (such as the translated label or
 There are many ways to set your template paths but only one which builds on Extbase/Fluid conventions. All methods are in
 this chapter, along with their implications, so you can match them to your use case and use the right one.
 
-### TypoScript configuration convention
+When you use these conventions the resulting code structures become easy to understand. Even if you don't publish your
+work, you should still use the conventions if nothing else for your own benefit when later revisiting code.
 
-> Note: This convention applies only when you use an extension to store your templates and configuration. This is
-> recommended - it's the official way.
+### Extension Key Registration (encouraged)
+
+> This is the preferred way to integrate with fluidcontent/fluidpages/fluidbackend and so on. It ensures a proper relation to an
+> extension and uses all known conventions from Extbase. For example, about where to expect template file locations, public assets etc.
+> The conventions for this particular type of integration we've placed in a dedicated chapter in this file.
+
+This approach assumes you have an extension. It can be one which already contains site-oriented files for your specific site or
+you can just create one (See the chapter on "Building Code"). In your ext_tables.php file add the following registration code:
+
+```php
+// $_EXTKEY = 'myext';
+Tx_Flux_Core::registerProviderExtensionKey($_EXTKEY, 'Content'); // to register content templates
+Tx_Flux_Core::registerProviderExtensionKey($_EXTKEY, 'Page'); // to register page templates
+Tx_Flux_Core::registerProviderExtensionKey($_EXTKEY, 'Backend'); // to register backend module templates
+```
+
+#### TypoScript configuration convention
 
 To add TypoScript configuration (such as the mandatory View paths) use the Extbase convention:
 
@@ -46,25 +62,6 @@ module.tx_myext.settings {
 }
 ```
 
-When you use these conventions the resulting code structures become easy to understand. Even if you don't publish your
-work, you should still use the conventions if nothing else for your own benefit when later revisiting code.
-
-### Extension Key Registration
-
-> This is the preferred way to integrate with fluidcontent/fluidpages/fluidbackend and so on. It ensures a proper relation to an
-> extension and uses all known conventions from Extbase. For example, about where to expect template file locations, public assets etc.
-> The conventions for this particular type of integration we've placed in a dedicated chapter in this file.
-
-This approach assumes you have an extension. It can be one which already contains site-oriented files for your specific site or
-you can just create one (See the chapter on "Building Code"). In your ext_tables.php file add the following registration code:
-
-```php
-// $_EXTKEY = 'myext';
-Tx_Flux_Core::registerProviderExtensionKey($_EXTKEY, 'Content'); // to register content templates
-Tx_Flux_Core::registerProviderExtensionKey($_EXTKEY, 'Page'); // to register page templates
-Tx_Flux_Core::registerProviderExtensionKey($_EXTKEY, 'Backend'); // to register backend module templates
-```
-
 #### Implications
 
 The second parameter indicates the Controller name. This has the following implications:
@@ -86,7 +83,7 @@ the consistency you gain. The configuration paths follow every convention known 
 the ability to add language files without using long paths to each file. There's of course more benefits from doing it this
 way - more than can fits here - _please consider using this approach even if you are just making basic templates._
 
-### Simple Template Path Registration
+### Simple Template Path Registration (discouraged)
 
 > We discourage this method since it detaches your template files from an extension scope. You should store your files
 > and configuration in an extension - it makes it easier to transport and allows you to use even more conventions. And it makes the
