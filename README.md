@@ -16,7 +16,7 @@ work for you and enable you to focus fully on the templates themselves rather th
 We do like to compare our extensions as a whole to the long time king of templating in TYPO3, TemplaVoila. However, there are some
 diferences - and assuming you know how TemplaVoila works, the major differences from that to this family of extensions are:
 
-* We don't store any form of templates in the database.
+* We don't store any form of templates in the database - they are instead contained in extensions called Provider Extensions.
 * We don't use template mapping. When you change a template, it's changed - no need for remapping, storing header code and so on.
 * We use TypoScript solely for configuration options, not for creating menus and such - we have ViewHelpers for that.
 * We detect your collection of templates in a filesystem path and simply read all (enabled) files therein as one group.
@@ -51,10 +51,6 @@ There are quite a few ways why we thing this new way is a lot better than the ol
 * It's better to use files than database storage for a site's design. It's less error prone (remember those UTF8-upgrades that
   broke your TemplaVoila template mappings...?) and allows for much better version control and conflict resolution when multiple
   authors work on the same template file.
-* It's better to use an extension to store your files. This makes it far more portable and version control becomes a breeze. Just
-  to name one benefit of this: you can download the extension from your site, make any changes you need and re-upload it with
-  overwriting enabled - which is a far more efficient way to deploy a new design than having to merge database differences between
-  a development and production site.
 * It's better to use a Fluid ViewHelper to render a menu object. Not only does this make it much easier to render different menus
   in different templates (including templates provided by other extensions!) without the need for a massive TypoScript object to
   be included with the template.
