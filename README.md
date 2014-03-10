@@ -13,21 +13,6 @@ It is our hope that you find your new favorite templating workflow in this exten
 possible need you might have and deliver ways to achieve your goals in less time than ever before. Our extensions do the boring
 work for you and enable you to focus fully on the templates themselves rather than how you should integrate them into TYPO3.
 
-We do like to compare our extensions as a whole to the long time king of templating in TYPO3, TemplaVoila. However, there are some
-diferences - and assuming you know how TemplaVoila works, the major differences from that to this family of extensions are:
-
-* We don't store any form of templates in the database - they are instead contained in extensions called Provider Extensions.
-* We don't use template mapping. When you change a template, it's changed - no need for remapping, storing header code and so on.
-* We use TypoScript solely for configuration options, not for creating menus and such - we have ViewHelpers for that.
-* We detect your collection of templates in a filesystem path and simply read all (enabled) files therein as one group.
-* We store backend layout grids, nested content element grids, extra configuration fields and much, much more directly in the
-  individual template files.
-* We use Fluid for everything so that you can use Fluid in everything: for processing labels for your content elements, for
-  generating an icon for a page template, and much more. This includes using your own ViewHelpers.
-* We use a special form strategy which mimics FlexForms, we call this the Flux form. It creates a form inside content or page (or
-  any other type of) record, into which you can insert fields simply by using one ViewHelper tag per field - which is extremely
-  compact compared to traditional FlexForms.
-
 #### Much more than pages and content
 
 It also doesn't hurt that there are many helper extensions which make it easier to work with Fluid. There are ViewHelper
