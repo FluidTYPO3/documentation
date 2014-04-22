@@ -414,4 +414,7 @@ After clearing all caches you should now see a new tab _FCE_ in the _New Content
 element selectable. As described earlier Flux' LLL rewrite feature will - when enabled - take care of generating translation
 keys in ``typo3conf/ext/quickstart/Resources/Private/Language/locallang.xml``.
 
+## Final hint
+Dont forget to add the extension css_styled_content if you include this extension in the TYPO3 template!
+
 To be continued...
